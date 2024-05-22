@@ -49,9 +49,6 @@ if [ -z "$stop_between_each_script" ]; then
     exit 1
 fi
 
-# Remove completely project folder if already existing. Tabula rasa before starting.
-# python3 remove_dir.py --dir "$project_name"
-
 # Create project folder
 if [ -n "$project_name" ]; then
     python3 create_project_folder.py --project "$project_name" 
@@ -60,7 +57,7 @@ fi
 # Run the start time script
 python3 start_time.py "$project_name/time_log.txt"
 
-# Download video from youtube
+# Download video from youtube if necessary
 if [ -n "$youtube_link" ]; then
     python3 interlude.py "Now i will download the video from youtube" "$stop_between_each_script"
     echo "Processing YouTube video link for project '$project_name': $youtube_link"
