@@ -21,7 +21,7 @@ import re
 # - Do not worry for destinations not existing: it will create them for you.
 #################################
 
-i_want_the_highest_quality = True
+i_want_the_highest_quality = False
 
 def check_if_video_or_playlist(url):
     # Check if the URL is for a playlist or a single video
